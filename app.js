@@ -13,7 +13,9 @@ function clickHandler(e){
     var current = Number(currentPriceRef.value);
 
         if(initial==0 || initial<0 || quantity==0 ||quantity<0 || current==0 || current<0){
-            showMessageError("fields cannot be empty or less than zero")
+            outPut.innerText=`fields cannot be empty or less than zero`;
+            outPut.style.color=`red`;
+            
         } else {
             calculateProfitAndLoss(initial,quantity,current);
         }
@@ -32,7 +34,10 @@ function calculateProfitAndLoss(initialPrice, quantity, currentPrice) {
         var profitPercentage = (profit / initialPrice) * 100;
 
 
-        showMessage(`hey you made a profit of ${profit.toFixed(2)} and the percentage is ${profitPercentage.toFixed(2)} %`)
+        outPut.innerText=`hey you made a profit of ${profit.toFixed(2)} and the percentage is ${profitPercentage.toFixed(2)} %`
+        outPut.style.color=`green`;
+       
+       
        
 
     } else if (initialPrice > currentPrice) {
@@ -41,27 +46,20 @@ function calculateProfitAndLoss(initialPrice, quantity, currentPrice) {
 
         var lossPercentage = (loss / initialPrice) * 100;
 
-        showMessage(`hey you made a loss of ${loss.toFixed(2)} and the percentage is ${lossPercentage.toFixed(2)} %`)
-
+        outPut.innerText=`hey you made a loss of ${loss.toFixed(2)} and the percentage is ${lossPercentage.toFixed(2)} %`
+        outPut.style.color=`blue`;
+        
     }
     
     else {
-        showMessage("no pain no gain!!")
+        outPut.innerText=`no pain no gain!!`
+        outPut.style.color=`black`;
     }
 
 
 }
-function showMessage(message) {
-    outPut.innerHTML = message;
-   
-    
-}
-   
-function showMessageError(message){
-    outPut.innerHTML = message;
 
-   
-}
+
 
 
 
