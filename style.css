@@ -12,7 +12,7 @@
   body {
     font-family: "Work Sans", sans-serif;
     text-align: center;
-    background-image: url("profit.gif");
+   
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -42,6 +42,16 @@
      padding:1rem;
    
  }        
+ #profit-img , #sad-img {
+  margin : auto;
+  width: 200px;
+  height: 120px;
+ }
+ #npng-img{
+  width: 200px;
+  margin : auto;
+  height: 120px;
+ }
 #output{
     font:900;
     color: rgb(5, 104, 21);
